@@ -315,47 +315,6 @@ trabalho-pratico-TMS/
 
 \`\`\`
 
-## �� Troubleshooting
-
-### Containers não iniciam
-\`\`\`bash
-# Verificar logs
-docker-compose logs
-
-# Reconstruir imagens
-docker-compose up --build --force-recreate
-\`\`\`
-
-### Portas em uso
-\`\`\`bash
-# Identificar processo usando a porta
-sudo lsof -i :3000
-
-# Matar processo (substitua PID)
-kill -9 <PID>
-\`\`\`
-
-### Alertas não disparam
-\`\`\`bash
-# Verificar targets do Prometheus
-curl http://localhost:9090/api/v1/targets
-
-# Verificar regras de alerta
-curl http://localhost:9090/api/v1/rules
-
-# Testar alertas manualmente
-make test-all
-\`\`\`
-
-### Grafana não acessa Prometheus
-\`\`\`bash
-# Verificar rede Docker
-docker network inspect trabalho-pratico-tms_monitoring
-
-# Testar conectividade
-docker exec grafana ping prometheus
-\`\`\`
-
 ## 📚 Recursos Adicionais
 
 - [Documentação Prometheus](https://prometheus.io/docs/)
@@ -365,8 +324,12 @@ docker exec grafana ping prometheus
 
 ## 👥 Equipe
 
-Projeto desenvolvido para a disciplina de Tópicos em Sistemas de Informação - PUC Minas
-
-## 📄 Licença
-
-Este projeto é de código aberto para fins educacionais.
+Projeto desenvolvido para a disciplina de Teste e Manutenção de Software - PUC Minas
+- Arthur Felipe Parreiras
+- Arthur Santos Bezerra
+- Élder Vanderlei Coleta de Freitas
+- Gabriel Rodrigues Martins
+- Humberto Roosevelt Figueredo Junior
+- Ian Martins Rosa
+- Marcos Vinicius dos Reis Santos
+- Matheus Felipe Coelho Rodrigues
