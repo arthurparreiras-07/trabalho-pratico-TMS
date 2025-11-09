@@ -13,6 +13,7 @@ Demonstrar práticas essenciais de DevOps:
 - Automação da infraestrutura com Makefile/Docker Compose
 
 
+
 ## 🛠️ Tecnologias Utilizadas
 
 | Tecnologia | Função |
