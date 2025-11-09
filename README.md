@@ -12,7 +12,6 @@ Demonstrar práticas essenciais de DevOps:
 - Observabilidade e visualização em dashboards
 - Automação da infraestrutura com Makefile/Docker Compose
 
----
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -26,7 +25,6 @@ Demonstrar práticas essenciais de DevOps:
 | **Alertmanager** | Gestão e envio de alertas |
 | **Grafana** | Dashboards e visualização |
 
----
 
 ## 🏗️ Arquitetura
 
@@ -47,7 +45,6 @@ Demonstrar práticas essenciais de DevOps:
 
 ````
 
----
 
 ## 🔧 Componentes
 
@@ -71,7 +68,6 @@ Demonstrar práticas essenciais de DevOps:
   - `app_active_users`
   - `app_memory_usage_bytes`
 
----
 
 ### **2) Prometheus (`prometheus`)**
 - Porta: **9090**
@@ -79,21 +75,18 @@ Demonstrar práticas essenciais de DevOps:
 - Avaliação de alertas a cada **15s**
 - Armazena métricas históricas para visualização e análise
 
----
 
 ### **3) Alertmanager (`alertmanager`)**
 - Porta: **9093**
 - Agrupa, roteia e envia alertas
 - Envia notificações para: `http://app:3000/webhook`
 
----
 
 ### **4) Grafana (`grafana`)**
 - Porta: **3001**
 - Credenciais padrão: `admin / admin`
 - Datasource Prometheus já configurado
 
----
 
 ## 🚨 Sistema de Alertas
 
@@ -105,7 +98,6 @@ Demonstrar práticas essenciais de DevOps:
 | **HighMemoryUsage** | warning | > 100MB de RAM | 1 min |
 | **ApplicationDown** | critical | App sem resposta | 30s |
 
----
 
 ## ▶️ Como Executar
 
@@ -135,7 +127,6 @@ Acesse:
 * Alertmanager: [http://localhost:9093](http://localhost:9093)
 * Grafana: [http://localhost:3001](http://localhost:3001)
 
----
 
 ## 🧪 Testes de Alertas
 
@@ -148,7 +139,6 @@ Acesse:
 | `make test-app-down` | Queda da aplicação  |
 | `make test-all`      | Dispara todos       |
 
----
 
 ## 📁 Estrutura do Projeto
 
@@ -168,7 +158,6 @@ trabalho-pratico-TMS/
 └── README.md
 ```
 
----
 
 ## 👥 Equipe
 
