@@ -1,0 +1,53 @@
+groups:
+- name: devops_alerts
+  interval: 10s
+  rules:
+    # Alerta: Taxa de erro alta
+    - alert: HighErrorRate
+      expr: rate(app_errors_total[1m]) > 0.5
+      for: 30s
+      labels:
+        severity: warning
+      annotations:
+        summary: "Taxa de erros alta detectada"
+        description: "A aplicação está gerando mais de 0.5 erros por segundo"
+
+    # Alerta: Requisições lentas
+    - alert: SlowRequests
+      expr: histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[1m])) > 1
+      for: 1m
+      labels:
+        severity: warning
+      annotations:
+        summary: "Requisições lentas detectadas"
+        description: "95% das requisições estão levando mais de 1 segundo"
+
+    # Alerta: Muitos usuários ativos
+    - alert: HighActiveUsers
+      expr: app_active_users > 150
+      for: 30s
+      labels:
+        severity: info
+      annotations:
+        summary: "Número alto de usuários ativos"
+        description: "Mais de 150 usuários ativos no sistema (atual: {{ $value }})"
+
+    # Alerta: Uso alto de memória
+    - alert: HighMemoryUsage
+      expr: app_memory_usage_bytes > 100000000
+      for: 1m
+      labels:
+        severity: warning
+      annotations:
+        summary: "Uso alto de memória"
+        description: "A aplicação está usando mais de 100MB de memória"
+
+    # Alerta: Aplicação fora do ar
+    - alert: ApplicationDown
+      expr: up{job="node-app"} == 0
+      for: 30s
+      labels:
+        severity: critical
+      annotations:
+        summary: "Aplicação fora do ar"
+        description: "A aplicação Node.js não está respondendo"
