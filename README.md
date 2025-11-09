@@ -1,4 +1,4 @@
-# 🚀 DevOps Monitoring - Projeto Acadêmico
+# 🚀 Monitoramento DevOps
 
 Sistema de monitoramento DevOps desenvolvido em TypeScript com Docker, Prometheus, Alertmanager e Grafana.
 
