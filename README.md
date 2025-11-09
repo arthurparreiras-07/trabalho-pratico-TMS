@@ -1,8 +1,3 @@
-Beleza — vou ajustar a formatação para deixá-lo mais limpo, coerente e com melhor hierarquia visual. Também vou padronizar títulos, identação de blocos e tabelas, e corrigir pequenas repetições.
-
----
-
-```md
 # 🚀 Monitoramento DevOps
 
 Ambiente completo de monitoramento desenvolvido em **TypeScript** com **Docker**, **Prometheus**, **Alertmanager** e **Grafana**.
